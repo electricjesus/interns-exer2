@@ -16,7 +16,9 @@ var parser = parse({delimiter: ','}, function(err, data){
   	process.exit(1);
   } else {
   	data.forEach(function(row, index)  {
-  		console.log(row);
+  		if (index!=0) {
+  				console.log(row);
+  		};
   	});
   }
 });
