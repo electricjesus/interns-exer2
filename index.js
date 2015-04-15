@@ -10,15 +10,18 @@ var parse = require('csv-parse');
 var fs = require('fs');
 
 
-var parser = parse({delimiter: ','}, function(err, data){
-  if(err) {
-  	console.log("CSV error.")
-  	process.exit(1);
-  } else {
-  	data.forEach(function(row, index)  {
-  		console.log(row);
-  	});
-  }
+var parser = parse( {delimiter: ','}, function(err, data){
+		  if(err) {
+		  	console.log("CSV error.")
+		  	process.exit(1);
+		  } else {
+		  	data.forEach( function(row, index){
+		  		if(index)
+		  		console.log(row);
+		  	});
+		  }
 });
+
+
 
 fs.createReadStream(__dirname+'/test.csv').pipe(parser);
