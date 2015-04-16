@@ -15,8 +15,11 @@ var parser = parse({delimiter: ','}, function(err, data){
   	console.log("CSV error.")
   	process.exit(1);
   } else {
+
   	data.forEach(function(row, index)  {
-  		console.log(row);
+  		if(index!=0) //changed
+  		{console.log(row);}
+  		
   	});
   }
 });
